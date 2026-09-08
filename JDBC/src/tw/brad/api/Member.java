@@ -1,16 +1,18 @@
 package tw.brad.api;
 
-public class member {
+public class Member {
 	private long id;
 	private String account, passwd, name;
 	
+	public Member() {}
 	
-	public member(long id,String account, String passwd, String name) {
+	public Member(long id, String account, String passwd, String name) {
 		this.id = id;
 		this.account = account;
 		this.passwd = passwd;
 		this.name = name;
 	}
+	
 	public long getId() {
 		return id;
 	}

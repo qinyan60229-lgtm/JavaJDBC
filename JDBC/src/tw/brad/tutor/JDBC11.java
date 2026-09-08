@@ -8,7 +8,7 @@ import java.util.Properties;
 import java.util.Scanner;
 
 import tw.brad.api.BCrypt;
-import tw.brad.api.member;
+import tw.brad.api.Member;
 
 public class JDBC11 {
 	private static final String URL = "jdbc:mysql://localhost:3306/brad";
@@ -36,7 +36,7 @@ public class JDBC11 {
 			System.out.print("Password: ");	
 			String passwd = scanner.next();
 			
-			member member = login(account, passwd, pstmt);
+			Member member = login(account, passwd, pstmt);
 			if (member != null) {
 				System.out.printf("Welcome, %s(%d)\n", member.getName(), member.getId());
 			}else {
@@ -50,14 +50,14 @@ public class JDBC11 {
 		
 	}
 	
-	static member login(String account, String passwd, PreparedStatement pstmt) 
+	static Member login(String account, String passwd, PreparedStatement pstmt) 
 		throws Exception {
 		pstmt.setString(1, account);
 		ResultSet rs = pstmt.executeQuery();
 		if (rs.next()) {
 			String hashPasswd = rs.getString("passwd");
 			if (BCrypt.checkpw(passwd, hashPasswd)) {
-				return new member(rs.getLong("id"), rs.getString("account"),
+				return new Member(rs.getLong("id"), rs.getString("account"),
 						rs.getString("passwd"),rs.getString("name"));
 			}else {
 				return null;

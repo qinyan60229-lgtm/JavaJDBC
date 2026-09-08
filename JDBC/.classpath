@@ -9,5 +9,7 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/User/git/repository/JDBC/json-20260814.jar"/>
 	<classpathentry kind="lib" path="C:/Users/User/git/repository/JDBC/mysql-connector-j-26.7.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/git/repository/JDBC/dir1/slf4j-api-2.0.17.jar"/>
+	<classpathentry kind="lib" path="C:/Users/User/git/repository/JDBC/dir1/HikariCP-7.0.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
